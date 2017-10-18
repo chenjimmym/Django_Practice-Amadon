@@ -4,8 +4,70 @@
         <title>Amadon</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>Welcome to Amadon</h1>
+        <div class="container">
+            <h1>Welcome to Amadon</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Order</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dojo Shirt</td>
+                        <td>$20</td>
+                        <td>
+                            <form action="process_buy" method="post">
+                                {% csrf_token %}
+                                <select name='quantity'>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                </select>
+                                <input type='hidden' name='product_id' value='1'>
+                                <input type='submit' value='Buy!'>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dojo Sweater</td>
+                        <td>$30</td>
+                        <td>
+                            <form action="process_buy" method="post">
+                            {% csrf_token %}
+                            <select name='quantity'>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            </select>
+                            <input type='hidden' name='product_id' value='2'>
+                            <input type='submit' value='Buy!'>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dojo Cup</td>
+                        <td>$5</td>
+                        <td>
+                            <form action="process_buy" method="post">
+                                {% csrf_token %}
+                                <select name='quantity'>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                </select>
+                                <input type='hidden' name='product_id' value='3'>
+                                <input type='submit' value='Buy!'>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
